@@ -106,6 +106,11 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
         cadastrarMenu.add(cadastrarProdutoMenuItem);
 
         cadastrarFuncionarioMenuItem.setText("Funcionário");
+        cadastrarFuncionarioMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadastrarFuncionarioMenuItemActionPerformed(evt);
+            }
+        });
         cadastrarMenu.add(cadastrarFuncionarioMenuItem);
 
         formMenuPrincipalMenuBar.add(cadastrarMenu);
@@ -134,6 +139,14 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
         DesktopPaneMenuPrincipal.add(cadastroProduto);
         cadastroProduto.pack();
     }//GEN-LAST:event_cadastrarProdutoMenuItemActionPerformed
+
+    private void cadastrarFuncionarioMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarFuncionarioMenuItemActionPerformed
+        // TODO add your handling code here:
+        CadastroFuncionario cadastroFuncionario = new CadastroFuncionario();
+        cadastroFuncionario.setVisible(true);
+        DesktopPaneMenuPrincipal.add(cadastroFuncionario);
+        cadastroFuncionario.pack();
+    }//GEN-LAST:event_cadastrarFuncionarioMenuItemActionPerformed
 
     /**
      * @param args the command line arguments
