@@ -5,6 +5,8 @@
  */
 package view;
 
+import javax.swing.JDesktopPane;
+
 /**
  *
  * @author Gustavo Santos
@@ -29,6 +31,8 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
 
         panelMenuPrincipal = new javax.swing.JPanel();
         DesktopPaneMenuPrincipal = new javax.swing.JDesktopPane();
+        labelIdFuncionarioLogado = new javax.swing.JLabel();
+        labelNomeFuncionarioLogado = new javax.swing.JLabel();
         formMenuPrincipalMenuBar = new javax.swing.JMenuBar();
         relatorioMenu = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -44,6 +48,8 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menu Principal");
+        setResizable(false);
+        setSize(new java.awt.Dimension(944, 577));
 
         panelMenuPrincipal.setBackground(new java.awt.Color(51, 51, 51));
 
@@ -58,15 +64,33 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
             .addGap(0, 500, Short.MAX_VALUE)
         );
 
+        labelIdFuncionarioLogado.setBackground(new java.awt.Color(255, 255, 255));
+        labelIdFuncionarioLogado.setForeground(new java.awt.Color(255, 255, 255));
+        labelIdFuncionarioLogado.setText("#");
+
+        labelNomeFuncionarioLogado.setForeground(new java.awt.Color(255, 255, 255));
+        labelNomeFuncionarioLogado.setText(".");
+
         javax.swing.GroupLayout panelMenuPrincipalLayout = new javax.swing.GroupLayout(panelMenuPrincipal);
         panelMenuPrincipal.setLayout(panelMenuPrincipalLayout);
         panelMenuPrincipalLayout.setHorizontalGroup(
             panelMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(DesktopPaneMenuPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(DesktopPaneMenuPrincipal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelMenuPrincipalLayout.createSequentialGroup()
+                .addGroup(panelMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(labelNomeFuncionarioLogado)
+                    .addComponent(labelIdFuncionarioLogado))
+                .addGap(66, 66, 66))
         );
         panelMenuPrincipalLayout.setVerticalGroup(
             panelMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(DesktopPaneMenuPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelMenuPrincipalLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(labelIdFuncionarioLogado)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(labelNomeFuncionarioLogado)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(DesktopPaneMenuPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         relatorioMenu.setText("Relatório");
@@ -133,7 +157,6 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cadastrarProdutoMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarProdutoMenuItemActionPerformed
-        // TODO add your handling code here:
         CadastroProduto cadastroProduto = new CadastroProduto();
         cadastroProduto.setVisible(true);
         DesktopPaneMenuPrincipal.add(cadastroProduto);
@@ -141,7 +164,6 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_cadastrarProdutoMenuItemActionPerformed
 
     private void cadastrarFuncionarioMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarFuncionarioMenuItemActionPerformed
-        // TODO add your handling code here:
         CadastroFuncionario cadastroFuncionario = new CadastroFuncionario();
         cadastroFuncionario.setVisible(true);
         DesktopPaneMenuPrincipal.add(cadastroFuncionario);
@@ -196,6 +218,8 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuBar formMenuPrincipalMenuBar;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JLabel labelIdFuncionarioLogado;
+    private javax.swing.JLabel labelNomeFuncionarioLogado;
     private javax.swing.JPanel panelMenuPrincipal;
     private javax.swing.JMenu relatorioMenu;
     // End of variables declaration//GEN-END:variables
