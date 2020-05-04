@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.9" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
     <Menu class="javax.swing.JMenuBar" name="formMenuPrincipalMenuBar">
       <SubComponents>
-        <Menu class="javax.swing.JMenu" name="relatorioMenu">
+        <Menu class="javax.swing.JMenu" name="menuOrcamento">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Or&#xe7;amento"/>
+          </Properties>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="menuRelatorio">
           <Properties>
             <Property name="text" type="java.lang.String" value="Relat&#xf3;rio"/>
           </Properties>
@@ -16,59 +21,72 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem2">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Completo"/>
+                <Property name="text" type="java.lang.String" value="Anal&#xed;tico"/>
               </Properties>
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="consultarMenu">
+        <Menu class="javax.swing.JMenu" name="menuGerenciar">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Consultar"/>
+            <Property name="text" type="java.lang.String" value="Gerenciar"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="consultarEstoqueMenuItem">
+            <MenuItem class="javax.swing.JMenuItem" name="menuItemEstoque">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Estoque"/>
               </Properties>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="consultarClienteMenuItem">
+            <Menu class="javax.swing.JMenu" name="menuGerenciarCliente">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cliente"/>
               </Properties>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="consultarFuncionarioMenuItem">
+              <SubComponents>
+                <MenuItem class="javax.swing.JMenuItem" name="menuItemNovoCliente">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Novo..."/>
+                  </Properties>
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="menuItemCACliente">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Consultar / Alterar"/>
+                  </Properties>
+                </MenuItem>
+              </SubComponents>
+            </Menu>
+            <Menu class="javax.swing.JMenu" name="menuGerenciarFuncionario">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Funcion&#xe1;rio"/>
               </Properties>
-            </MenuItem>
-          </SubComponents>
-        </Menu>
-        <Menu class="javax.swing.JMenu" name="cadastrarMenu">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Cadastrar"/>
-          </Properties>
-          <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="cadastrarClienteMenuItem">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Cliente"/>
-              </Properties>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="cadastrarProdutoMenuItem">
+              <SubComponents>
+                <MenuItem class="javax.swing.JMenuItem" name="menuItemNovoFuncionario">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Novo..."/>
+                  </Properties>
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="menuItemCAFuncionario">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Consultar / Alterar"/>
+                  </Properties>
+                </MenuItem>
+              </SubComponents>
+            </Menu>
+            <Menu class="javax.swing.JMenu" name="menuGerenciarProduto">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Produto"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cadastrarProdutoMenuItemActionPerformed"/>
-              </Events>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="cadastrarFuncionarioMenuItem">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Funcion&#xe1;rio"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cadastrarFuncionarioMenuItemActionPerformed"/>
-              </Events>
-            </MenuItem>
+              <SubComponents>
+                <MenuItem class="javax.swing.JMenuItem" name="menuItemNovoProduto">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Novo..."/>
+                  </Properties>
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="menuItemCAProduto">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Consultar / Alterar"/>
+                  </Properties>
+                </MenuItem>
+              </SubComponents>
+            </Menu>
           </SubComponents>
         </Menu>
       </SubComponents>
@@ -147,6 +165,11 @@
       </Layout>
       <SubComponents>
         <Container class="javax.swing.JDesktopPane" name="DesktopPaneMenuPrincipal">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="99" green="99" red="99" type="rgb"/>
+            </Property>
+          </Properties>
 
           <Layout>
             <DimensionLayout dim="0">
