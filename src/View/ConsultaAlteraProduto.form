@@ -354,7 +354,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel7">
               <Properties>
-                <Property name="text" type="java.lang.String" value="* Campos Obrigat&#xf3;rios"/>
+                <Property name="text" type="java.lang.String" value="* &#xc9; necess&#xe1;rio clicar em ALTERAR para salvar altera&#xe7;&#xf5;es, caso contr&#xe1;rio clique em cancelar."/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="jButton3">

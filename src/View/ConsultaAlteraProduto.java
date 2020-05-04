@@ -188,7 +188,7 @@ public class ConsultaAlteraProduto extends javax.swing.JInternalFrame {
 
         jButton2.setText("CANCELAR");
 
-        jLabel7.setText("* Campos Obrigatórios");
+        jLabel7.setText("* É necessário clicar em ALTERAR para salvar alterações, caso contrário clique em cancelar.");
 
         jButton3.setText("ALTERAR");
 

@@ -71,7 +71,7 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione -", "Feminino", "Masculino", "Outros" }));
 
-        jLabel3.setText("ESTADO CIVÍL *");
+        jLabel3.setText("ESTADO CIVIL *");
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione -", "Solteiro(a)" }));
 
