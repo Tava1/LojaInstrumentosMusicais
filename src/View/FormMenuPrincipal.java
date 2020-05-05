@@ -7,9 +7,6 @@ import javax.swing.JDesktopPane;
  */
 public class FormMenuPrincipal extends javax.swing.JFrame {
 
-    /**
-     * Creates new form FormMenuPrincipal
-     */
     public FormMenuPrincipal() {
         initComponents();
     }
@@ -24,9 +21,9 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
         labelNomeFuncionarioLogado = new javax.swing.JLabel();
         formMenuPrincipalMenuBar = new javax.swing.JMenuBar();
         menuOrcamento = new javax.swing.JMenu();
+        menuItemGerarPedido = new javax.swing.JMenuItem();
         menuRelatorio = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        menuItemRelatorios = new javax.swing.JMenuItem();
         menuGerenciar = new javax.swing.JMenu();
         menuItemEstoque = new javax.swing.JMenuItem();
         menuGerenciarCliente = new javax.swing.JMenu();
@@ -56,7 +53,7 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
         );
         DesktopPaneMenuPrincipalLayout.setVerticalGroup(
             DesktopPaneMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
+            .addGap(0, 621, Short.MAX_VALUE)
         );
 
         labelIdFuncionarioLogado.setBackground(new java.awt.Color(255, 255, 255));
@@ -89,29 +86,55 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
         );
 
         menuOrcamento.setText("Orçamento");
+
+        menuItemGerarPedido.setText("Gerar Pedido");
+        menuItemGerarPedido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemGerarPedidoActionPerformed(evt);
+            }
+        });
+        menuOrcamento.add(menuItemGerarPedido);
+
         formMenuPrincipalMenuBar.add(menuOrcamento);
 
         menuRelatorio.setText("Relatório");
 
-        jMenuItem1.setText("Simples");
-        menuRelatorio.add(jMenuItem1);
-
-        jMenuItem2.setText("Analítico");
-        menuRelatorio.add(jMenuItem2);
+        menuItemRelatorios.setText("Emitir Relatórios");
+        menuItemRelatorios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemRelatoriosActionPerformed(evt);
+            }
+        });
+        menuRelatorio.add(menuItemRelatorios);
 
         formMenuPrincipalMenuBar.add(menuRelatorio);
 
         menuGerenciar.setText("Gerenciar");
 
         menuItemEstoque.setText("Estoque");
+        menuItemEstoque.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemEstoqueActionPerformed(evt);
+            }
+        });
         menuGerenciar.add(menuItemEstoque);
 
         menuGerenciarCliente.setText("Cliente");
 
         menuItemNovoCliente.setText("Novo...");
+        menuItemNovoCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemNovoClienteActionPerformed(evt);
+            }
+        });
         menuGerenciarCliente.add(menuItemNovoCliente);
 
         menuItemCACliente.setText("Consultar / Alterar");
+        menuItemCACliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemCAClienteActionPerformed(evt);
+            }
+        });
         menuGerenciarCliente.add(menuItemCACliente);
 
         menuGerenciar.add(menuGerenciarCliente);
@@ -119,9 +142,19 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
         menuGerenciarFuncionario.setText("Funcionário");
 
         menuItemNovoFuncionario.setText("Novo...");
+        menuItemNovoFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemNovoFuncionarioActionPerformed(evt);
+            }
+        });
         menuGerenciarFuncionario.add(menuItemNovoFuncionario);
 
         menuItemCAFuncionario.setText("Consultar / Alterar");
+        menuItemCAFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemCAFuncionarioActionPerformed(evt);
+            }
+        });
         menuGerenciarFuncionario.add(menuItemCAFuncionario);
 
         menuGerenciar.add(menuGerenciarFuncionario);
@@ -129,9 +162,19 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
         menuGerenciarProduto.setText("Produto");
 
         menuItemNovoProduto.setText("Novo...");
+        menuItemNovoProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemNovoProdutoActionPerformed(evt);
+            }
+        });
         menuGerenciarProduto.add(menuItemNovoProduto);
 
         menuItemCAProduto.setText("Consultar / Alterar");
+        menuItemCAProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemCAProdutoActionPerformed(evt);
+            }
+        });
         menuGerenciarProduto.add(menuItemCAProduto);
 
         menuGerenciar.add(menuGerenciarProduto);
@@ -154,6 +197,60 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void menuItemNovoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemNovoClienteActionPerformed
+        CadastroCliente cadastroCliente = new CadastroCliente();
+        DesktopPaneMenuPrincipal.add(cadastroCliente);
+        cadastroCliente.setVisible(true);
+    }//GEN-LAST:event_menuItemNovoClienteActionPerformed
+
+    private void menuItemEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemEstoqueActionPerformed
+        GerenciarEstoque gerenciarEstoque = new GerenciarEstoque();
+        DesktopPaneMenuPrincipal.add(gerenciarEstoque);
+        gerenciarEstoque.setVisible(true);
+    }//GEN-LAST:event_menuItemEstoqueActionPerformed
+
+    private void menuItemCAClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemCAClienteActionPerformed
+        ConsultaAlteraCliente consultaAlteraCliente = new ConsultaAlteraCliente();
+        DesktopPaneMenuPrincipal.add(consultaAlteraCliente);
+        consultaAlteraCliente.setVisible(true);
+    }//GEN-LAST:event_menuItemCAClienteActionPerformed
+
+    private void menuItemNovoFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemNovoFuncionarioActionPerformed
+        CadastroFuncionario cadastroFuncionario = new CadastroFuncionario();
+        DesktopPaneMenuPrincipal.add(cadastroFuncionario);
+        cadastroFuncionario.setVisible(true);
+    }//GEN-LAST:event_menuItemNovoFuncionarioActionPerformed
+
+    private void menuItemCAFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemCAFuncionarioActionPerformed
+        ConsultaAlteraFuncionario consultaAlteraFuncionario = new ConsultaAlteraFuncionario();
+        DesktopPaneMenuPrincipal.add(consultaAlteraFuncionario);
+        consultaAlteraFuncionario.setVisible(true);
+    }//GEN-LAST:event_menuItemCAFuncionarioActionPerformed
+
+    private void menuItemNovoProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemNovoProdutoActionPerformed
+        CadastroProduto cadastroProduto = new CadastroProduto();
+        DesktopPaneMenuPrincipal.add(cadastroProduto);
+        cadastroProduto.setVisible(true);
+    }//GEN-LAST:event_menuItemNovoProdutoActionPerformed
+
+    private void menuItemCAProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemCAProdutoActionPerformed
+        ConsultaAlteraProduto consultaAlteraProduto = new ConsultaAlteraProduto();
+        DesktopPaneMenuPrincipal.add(consultaAlteraProduto);
+        consultaAlteraProduto.setVisible(true);
+    }//GEN-LAST:event_menuItemCAProdutoActionPerformed
+
+    private void menuItemRelatoriosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemRelatoriosActionPerformed
+        GerarRelatorio gerarRelatorio = new GerarRelatorio();
+        DesktopPaneMenuPrincipal.add(gerarRelatorio);
+        gerarRelatorio.setVisible(true);
+    }//GEN-LAST:event_menuItemRelatoriosActionPerformed
+
+    private void menuItemGerarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemGerarPedidoActionPerformed
+        GerarPedido gerarPedido = new GerarPedido();
+        DesktopPaneMenuPrincipal.add(gerarPedido);
+        gerarPedido.setVisible(true);
+    }//GEN-LAST:event_menuItemGerarPedidoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -193,8 +290,6 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane DesktopPaneMenuPrincipal;
     private javax.swing.JMenuBar formMenuPrincipalMenuBar;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JLabel labelIdFuncionarioLogado;
     private javax.swing.JLabel labelNomeFuncionarioLogado;
     private javax.swing.JMenu menuGerenciar;
@@ -205,9 +300,11 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem menuItemCAFuncionario;
     private javax.swing.JMenuItem menuItemCAProduto;
     private javax.swing.JMenuItem menuItemEstoque;
+    private javax.swing.JMenuItem menuItemGerarPedido;
     private javax.swing.JMenuItem menuItemNovoCliente;
     private javax.swing.JMenuItem menuItemNovoFuncionario;
     private javax.swing.JMenuItem menuItemNovoProduto;
+    private javax.swing.JMenuItem menuItemRelatorios;
     private javax.swing.JMenu menuOrcamento;
     private javax.swing.JMenu menuRelatorio;
     private javax.swing.JPanel panelMenuPrincipal;
