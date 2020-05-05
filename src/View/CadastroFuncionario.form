@@ -171,6 +171,9 @@
                   <Format format="###.###.###-##" subtype="-1" type="5"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jFormattedTextField1ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel4">
               <Properties>
@@ -181,7 +184,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel5">
               <Properties>
-                <Property name="text" type="java.lang.String" value="SEXO *"/>
+                <Property name="text" type="java.lang.String" value="G&#xca;NERO *"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JComboBox" name="jComboBox1">

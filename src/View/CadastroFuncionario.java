@@ -53,10 +53,15 @@ public class CadastroFuncionario extends javax.swing.JInternalFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        jFormattedTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextField1ActionPerformed(evt);
+            }
+        });
 
         jLabel4.setText("E-MAIL *");
 
-        jLabel5.setText("SEXO *");
+        jLabel5.setText("GÊNERO *");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione -", "Feminino", "Masculino", "Outros" }));
 
@@ -232,6 +237,10 @@ public class CadastroFuncionario extends javax.swing.JInternalFrame {
         GerenciarCargosFuncionario gerenciarCargosFuncionario = new GerenciarCargosFuncionario();
         gerenciarCargosFuncionario.setVisible(true);
     }//GEN-LAST:event_ButtonGerCargoCadFuncionarioActionPerformed
+
+    private void jFormattedTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFormattedTextField1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
