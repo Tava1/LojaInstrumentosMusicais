@@ -1,5 +1,7 @@
 package View;
 
+import javax.swing.JOptionPane;
+
 /**
  * @author Gustavo Santos
  */
@@ -16,11 +18,11 @@ public class FormLogin extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        TextFieldUsuarioLogin = new javax.swing.JTextField();
+        textFieldUsuarioLogin = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        TextFieldSenhaLogin = new javax.swing.JTextField();
         ButtonEntrarLogin = new javax.swing.JButton();
+        pwFieldSenhaLogin = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -39,7 +41,7 @@ public class FormLogin extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(104, 104, 104)
                 .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(120, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -49,10 +51,15 @@ public class FormLogin extends javax.swing.JFrame {
                 .addContainerGap(54, Short.MAX_VALUE))
         );
 
-        TextFieldUsuarioLogin.setBorder(null);
-        TextFieldUsuarioLogin.addActionListener(new java.awt.event.ActionListener() {
+        textFieldUsuarioLogin.setBorder(null);
+        textFieldUsuarioLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TextFieldUsuarioLoginActionPerformed(evt);
+                textFieldUsuarioLoginActionPerformed(evt);
+            }
+        });
+        textFieldUsuarioLogin.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                textFieldUsuarioLoginKeyPressed(evt);
             }
         });
 
@@ -62,11 +69,14 @@ public class FormLogin extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Senha");
 
-        TextFieldSenhaLogin.setBorder(null);
-
         ButtonEntrarLogin.setBackground(new java.awt.Color(255, 255, 255));
         ButtonEntrarLogin.setText("Entrar");
         ButtonEntrarLogin.setBorder(null);
+        ButtonEntrarLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonEntrarLoginActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -75,13 +85,12 @@ public class FormLogin extends javax.swing.JFrame {
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(80, 80, 80)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel3)
-                        .addComponent(jLabel2)
-                        .addComponent(TextFieldUsuarioLogin)
-                        .addComponent(TextFieldSenhaLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(ButtonEntrarLogin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel2)
+                    .addComponent(textFieldUsuarioLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                    .addComponent(pwFieldSenhaLogin)
+                    .addComponent(ButtonEntrarLogin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(80, 80, 80))
         );
         jPanel1Layout.setVerticalGroup(
@@ -91,14 +100,14 @@ public class FormLogin extends javax.swing.JFrame {
                 .addGap(34, 34, 34)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TextFieldUsuarioLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(textFieldUsuarioLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TextFieldSenhaLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(pwFieldSenhaLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(ButtonEntrarLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 79, Short.MAX_VALUE))
+                .addGap(0, 87, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -116,9 +125,41 @@ public class FormLogin extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void TextFieldUsuarioLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldUsuarioLoginActionPerformed
+    private void textFieldUsuarioLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldUsuarioLoginActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TextFieldUsuarioLoginActionPerformed
+    }//GEN-LAST:event_textFieldUsuarioLoginActionPerformed
+
+    private void ButtonEntrarLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEntrarLoginActionPerformed
+        // TODO add your handling code here:
+        String usuario = textFieldUsuarioLogin.getText();
+        String senha = pwFieldSenhaLogin.getText();
+        
+        if(usuario.length() == 6) {
+            if (senha.length() >= 8 && senha.length() <= 16) {
+                try {
+                    // TODO: Conexao e verificar a existencia do usuario, caso nao exista, informacoes incorretas. Printar mensagem para o usuario.
+                    FormMenuPrincipal formMenuPrincipal = new FormMenuPrincipal();
+                    formMenuPrincipal.setVisible(true);
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, e);
+                }
+            } else {
+            JOptionPane.showMessageDialog(null, "Senha inválido, Mínimo 8 e Máximo 16 caracteres.");
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Login inválido, lembre-se que o login deve possuir 6 caracteres.");
+        }
+    }//GEN-LAST:event_ButtonEntrarLoginActionPerformed
+
+    private void textFieldUsuarioLoginKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textFieldUsuarioLoginKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(Character.isLetter(c)){
+            textFieldUsuarioLogin.setEditable(false);
+        }else{
+            textFieldUsuarioLogin.setEditable(true);
+        }
+    }//GEN-LAST:event_textFieldUsuarioLoginKeyPressed
 
     /**
      * @param args the command line arguments
@@ -157,12 +198,12 @@ public class FormLogin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonEntrarLogin;
-    private javax.swing.JTextField TextFieldSenhaLogin;
-    private javax.swing.JTextField TextFieldUsuarioLogin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPasswordField pwFieldSenhaLogin;
+    private javax.swing.JTextField textFieldUsuarioLogin;
     // End of variables declaration//GEN-END:variables
 }
