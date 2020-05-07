@@ -1,5 +1,6 @@
 package View;
 
+import Utils.Validador;
 import javax.swing.JOptionPane;
 
 /**
@@ -131,24 +132,14 @@ public class FormLogin extends javax.swing.JFrame {
 
     private void ButtonEntrarLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEntrarLoginActionPerformed
         // TODO add your handling code here:
-        String usuario = textFieldUsuarioLogin.getText();
-        String senha = pwFieldSenhaLogin.getText();
         
-        if(usuario.length() == 6) {
-            if (senha.length() >= 8 && senha.length() <= 16) {
-                try {
-                    // TODO: Conexao e verificar a existencia do usuario, caso nao exista, informacoes incorretas. Printar mensagem para o usuario.
-                    FormMenuPrincipal formMenuPrincipal = new FormMenuPrincipal();
-                    formMenuPrincipal.setVisible(true);
-                } catch (Exception e) {
-                    JOptionPane.showMessageDialog(null, e);
-                }
+            Validador validador = new Validador();
+            if (validador.ValidarLogin(textFieldUsuarioLogin, pwFieldSenhaLogin)) {
+                FormMenuPrincipal formMenuPrincipal = new FormMenuPrincipal();
+                formMenuPrincipal.setVisible(true);
             } else {
-            JOptionPane.showMessageDialog(null, "Senha inválido, Mínimo 8 e Máximo 16 caracteres.");
+                JOptionPane.showMessageDialog(null, "ID de usuário ou senha, estão incorretos.");
             }
-        } else {
-            JOptionPane.showMessageDialog(null, "Login inválido, lembre-se que o login deve possuir 6 caracteres.");
-        }
     }//GEN-LAST:event_ButtonEntrarLoginActionPerformed
 
     private void textFieldUsuarioLoginKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textFieldUsuarioLoginKeyPressed
