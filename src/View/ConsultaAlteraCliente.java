@@ -80,6 +80,7 @@ public class ConsultaAlteraCliente extends javax.swing.JInternalFrame {
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
+        setTitle("Consultar e Alterar Cliente");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -211,7 +212,7 @@ public class ConsultaAlteraCliente extends javax.swing.JInternalFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID Pedido", "Data Compra", "Vendedor", "Total"
             }
         ));
         jScrollPane2.setViewportView(jTable2);
