@@ -1,24 +1,29 @@
 package Model;
+
+import java.util.Date;
 /**
  * @author Gustavo Santos
  */
 public class Cliente {
+    
+    private int id;
     private String nome;
-    private int sexo;
+    private String sexo;
     private int estadoCivil;
-    private int dataNascimento;
+    private Date dataNascimento;
     private String cpf;
     private String endereco;
     private String enderecoNumero;
     private String email; 
-    private int telefonePrimario;
-    private int telefoneSecundario;
+    private String telefonePrimario;
+    private String telefoneSecundario;
     
     public Cliente() {
         
     }
     
-    public Cliente(String nome, int sexo, int estadoCivil, int dataNascimento, String cpf, String endereco, String enderecoNumero, String email, int telefonePrimario, int telefoneSecundario) {
+    public Cliente(int id, String nome, String sexo, int estadoCivil, Date dataNascimento, String cpf, String endereco, String enderecoNumero, String email, String telefonePrimario, String telefoneSecundario) {
+        this.id = id;
         this.nome = nome;
         this.sexo = sexo;
         this.estadoCivil = estadoCivil;
@@ -30,6 +35,14 @@ public class Cliente {
         this.telefonePrimario = telefonePrimario;
         this.telefoneSecundario = telefoneSecundario;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
     
     public String getNome() {
         return nome;
@@ -39,11 +52,11 @@ public class Cliente {
         this.nome = nome;
     }
     
-    public int getSexo() {
+    public String getSexo() {
         return sexo;
     }
     
-    public void setSexo(int sexo) {
+    public void setSexo(String sexo) {
         this.sexo = sexo;
     }
     
@@ -55,11 +68,11 @@ public class Cliente {
         this.estadoCivil = estadoCivil;
     }
     
-    public int getDataNascimento() {
+    public Date getDataNascimento() {
         return dataNascimento;
     }
     
-    public void setDataNascimento(int dataNascimento) {
+    public void setDataNascimento(Date dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
     
@@ -95,19 +108,19 @@ public class Cliente {
         this.email = email;
     }
     
-    public int getTelefonePrimario() {
+    public String getTelefonePrimario() {
         return telefonePrimario;
     }
     
-    public void setTelefonePrimario(int telefonePrimario) {
+    public void setTelefonePrimario(String telefonePrimario) {
         this.telefonePrimario = telefonePrimario;
     }
     
-    public int getTelefoneSecundario() {
+    public String getTelefoneSecundario() {
         return telefoneSecundario;
     }
     
-    public void setTelefoneSecundario(int telefoneSecundario) {
+    public void setTelefoneSecundario(String telefoneSecundario) {
         this.telefoneSecundario = telefoneSecundario;
     }
 }
