@@ -8,12 +8,13 @@ public class Cliente {
     
     private int id;
     private String nome;
-    private String sexo;
+    private int genero;
     private int estadoCivil;
     private Date dataNascimento;
     private String cpf;
     private String endereco;
     private String enderecoNumero;
+    private String complemento;
     private String email; 
     private String telefonePrimario;
     private String telefoneSecundario;
@@ -22,15 +23,16 @@ public class Cliente {
         
     }
     
-    public Cliente(int id, String nome, String sexo, int estadoCivil, Date dataNascimento, String cpf, String endereco, String enderecoNumero, String email, String telefonePrimario, String telefoneSecundario) {
+    public Cliente(int id, String nome, int genero, int estadoCivil, Date dataNascimento, String cpf, String endereco, String enderecoNumero, String complemento, String email, String telefonePrimario, String telefoneSecundario) {
         this.id = id;
         this.nome = nome;
-        this.sexo = sexo;
+        this.genero = genero;
         this.estadoCivil = estadoCivil;
         this.dataNascimento = dataNascimento;
         this.cpf = cpf;
         this.endereco = endereco;
         this.enderecoNumero = enderecoNumero;
+        this.complemento = complemento;
         this.email = email;
         this.telefonePrimario = telefonePrimario;
         this.telefoneSecundario = telefoneSecundario;
@@ -52,12 +54,12 @@ public class Cliente {
         this.nome = nome;
     }
     
-    public String getSexo() {
-        return sexo;
+    public int getGenero() {
+        return genero;
     }
     
-    public void setSexo(String sexo) {
-        this.sexo = sexo;
+    public void setGenero(int genero) {
+        this.genero = genero;
     }
     
     public int getEstadoCivil() {
@@ -98,6 +100,14 @@ public class Cliente {
     
     public void setEnderecoNumero(String enderecoNumero) {
         this.enderecoNumero = enderecoNumero;
+    }
+
+    public String getComplemento() {
+        return complemento;
+    }
+
+    public void setComplemento(String complemento) {
+        this.complemento = complemento;
     }
     
     public String getEmail() {
