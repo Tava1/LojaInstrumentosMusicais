@@ -86,4 +86,41 @@ public class Validador {
     public void ValidarCampoDinheiroVazio(JFormattedTextField campoFormatado){
         //TODO: O nome do metodo ja diz.
     }
+
+    public String ValidarCPF(JFormattedTextField cpfFormatado) {
+        String cpfValido = cpfFormatado.getText();
+        
+        cpfValido = cpfValido.replace("-", "");
+        cpfValido = cpfValido.replace(".", "");
+        
+//        try {
+//            Integer retorno = Integer.parseInt(cpfValido);
+//        } 
+//        catch (NumberFormatException e) {
+//            JOptionPane.showMessageDialog(null, "CPF inválido." + e);
+//        }
+        
+        return cpfValido;
+    }
+    
+    public String ValidarTelefone(JFormattedTextField telefoneFormatado) {
+        String telefone = telefoneFormatado.getText();
+        
+        telefone = telefone.replace("(", "");
+        telefone = telefone.replace(")", "");
+        telefone = telefone.replace(" ", "");
+        telefone = telefone.replace("-", "");
+
+
+//        try {
+//            Integer retorno = Integer.parseInt(cpfValido);
+//        } 
+//        catch (NumberFormatException e) {
+//            JOptionPane.showMessageDialog(null, "CPF inválido." + e);
+//        }
+        
+        return telefone;
+        
+    }
+
 }
