@@ -22,18 +22,18 @@ public class ClienteDAO {
             connection = GerenciarDataBase.abrirConexao();
             
             // Criando query SQL
-            preparedStatement = connection.prepareStatement("INSERT INTO cliente (Nome, CPF, Sexo, EstadoCivil, DataNascimento, Email, NumeroTelefone1, NumeroTelefone2, Endereco, NumeroEndereco) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);", Statement.RETURN_GENERATED_KEYS);
-            // TODO: Persistencia dos dados;
+            preparedStatement = connection.prepareStatement("INSERT INTO cliente (Nome, CPF, Sexo, EstadoCivil, DataNascimento, Email, NumeroTelefone1, NumeroTelefone2, Endereco, NumeroEndereco, Complemento) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);", Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setString(1, cliente.getNome());
             preparedStatement.setString(2, cliente.getCpf());
-            preparedStatement.setInt(3, cliente.getEstadoCivil());
-            preparedStatement.setString(4, cliente.getSexo());
+            preparedStatement.setString(3, Integer.toString(cliente.getEstadoCivil()));
+            preparedStatement.setString(4, Integer.toString(cliente.getGenero()));
             preparedStatement.setDate(5, new java.sql.Date(cliente.getDataNascimento().getTime()));
             preparedStatement.setString(6, cliente.getEmail());
             preparedStatement.setString(7, cliente.getTelefonePrimario());
             preparedStatement.setString(8, cliente.getTelefoneSecundario());
             preparedStatement.setString(9, cliente.getEndereco());
             preparedStatement.setString(10, cliente.getEnderecoNumero());
+            preparedStatement.setString(11, cliente.getComplemento());
             
             int linhasAfetadas = preparedStatement.executeUpdate();
             
@@ -89,14 +89,15 @@ public class ClienteDAO {
                 cliente.setId(resultSet.getInt("IdCliente"));
                 cliente.setNome(resultSet.getString("Nome"));
                 cliente.setCpf(resultSet.getString("CPF"));
-                cliente.setSexo(resultSet.getString("Sexo"));
-                cliente.setEstadoCivil(resultSet.getInt("EstadoCivil"));
+                cliente.setGenero(Integer.parseInt(resultSet.getString("Sexo")));
+                cliente.setEstadoCivil(Integer.parseInt(resultSet.getString("EstadoCivil")));
                 cliente.setDataNascimento(resultSet.getDate("DataNascimeto"));
                 cliente.setEmail(resultSet.getString("Email"));
                 cliente.setTelefonePrimario(resultSet.getString("NumeroTelefone1"));
                 cliente.setTelefoneSecundario(resultSet.getString("NumeroTelefone2"));
                 cliente.setEndereco(resultSet.getString("Endereco"));
                 cliente.setEnderecoNumero(resultSet.getString("NumeroEndereco"));
+                cliente.setComplemento(resultSet.getString("Complemento"));
 
                 // Adiciona cada cliente a lista de clientes
                 clientes.add(cliente);
@@ -144,15 +145,16 @@ public class ClienteDAO {
                 cliente.setId(resultSet.getInt("IdCliente"));
                 cliente.setNome(resultSet.getString("Nome"));
                 cliente.setCpf(resultSet.getString("CPF"));
-                cliente.setSexo(resultSet.getString("Sexo"));
-                cliente.setEstadoCivil(resultSet.getInt("EstadoCivil"));
+                cliente.setGenero(Integer.parseInt(resultSet.getString("Sexo")));
+                cliente.setEstadoCivil(Integer.parseInt(resultSet.getString("EstadoCivil")));
                 cliente.setDataNascimento(resultSet.getDate("DataNascimento"));
                 cliente.setEmail(resultSet.getString("Email"));
                 cliente.setTelefonePrimario(resultSet.getString("NumeroTelefone1"));
                 cliente.setTelefoneSecundario(resultSet.getString("NumeroTelefone2"));
                 cliente.setEndereco(resultSet.getString("Endereco"));
                 cliente.setEnderecoNumero(resultSet.getString("NumeroEndereco"));
-                
+                cliente.setComplemento(resultSet.getString("Complemento"));
+
                 // Adiciona cada cliente a lista de clientes
                 clientes.add(cliente);
                 
@@ -200,14 +202,15 @@ public class ClienteDAO {
                 cliente.setId(resultSet.getInt("IdCliente"));
                 cliente.setNome(resultSet.getString("Nome"));
                 cliente.setCpf(resultSet.getString("CPF"));
-                cliente.setSexo(resultSet.getString("Sexo"));
-                cliente.setEstadoCivil(resultSet.getInt("EstadoCivil"));
+                cliente.setGenero(Integer.parseInt(resultSet.getString("Sexo")));
+                cliente.setEstadoCivil(Integer.parseInt(resultSet.getString("EstadoCivil")));
                 cliente.setDataNascimento(resultSet.getDate("DataNascimento"));
                 cliente.setEmail(resultSet.getString("Email"));
                 cliente.setTelefonePrimario(resultSet.getString("NumeroTelefone1"));
                 cliente.setTelefoneSecundario(resultSet.getString("NumeroTelefone2"));
                 cliente.setEndereco(resultSet.getString("Endereco"));
                 cliente.setEnderecoNumero(resultSet.getString("NumeroEndereco"));
+                cliente.setComplemento(resultSet.getString("Complemento"));
                 
                 // Adiciona cada cliente a lista de clientes
                 clientes.add(cliente);
@@ -242,20 +245,21 @@ public class ClienteDAO {
         try {
             connection = GerenciarDataBase.abrirConexao();
             
-            preparedStatement = connection.prepareStatement("UPDATE cliente SET Nome = ?, CPF = ?, Sexo = ?, EstadoCivil = ?, DataNascimento = ?, Email = ?, NumeroTelefone1 = ?, NumeroTelefone2 = ?, Endereco = ?, NumeroEndereco = ?, WHERE IdCliente = ?;");
+            preparedStatement = connection.prepareStatement("UPDATE cliente SET Nome = ?, CPF = ?, Sexo = ?, EstadoCivil = ?, DataNascimento = ?, Email = ?, NumeroTelefone1 = ?, NumeroTelefone2 = ?, Endereco = ?, NumeroEndereco = ?, Complemento = ? WHERE IdCliente = ?;");
             
             preparedStatement.setString(1, cliente.getNome());
             preparedStatement.setString(2, cliente.getCpf());
-            preparedStatement.setString(3, cliente.getSexo());
-            preparedStatement.setInt(4, cliente.getEstadoCivil());
+            preparedStatement.setString(3, Integer.toString(cliente.getEstadoCivil()));
+            preparedStatement.setString(4, Integer.toString(cliente.getGenero()));
             preparedStatement.setDate(5, new java.sql.Date(cliente.getDataNascimento().getTime()));
             preparedStatement.setString(6, cliente.getEmail());
             preparedStatement.setString(7, cliente.getTelefonePrimario());
             preparedStatement.setString(8, cliente.getTelefoneSecundario());
             preparedStatement.setString(9, cliente.getEndereco());
             preparedStatement.setString(10, cliente.getEnderecoNumero());
+            preparedStatement.setString(11, cliente.getComplemento());
             // WHERE
-            preparedStatement.setInt(11, cliente.getId());
+            preparedStatement.setInt(12, cliente.getId());
 
             
             int linhasAfetadas = preparedStatement.executeUpdate();
