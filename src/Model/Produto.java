@@ -4,39 +4,31 @@ package Model;
  * @author Gustavo Santos
  */
 public class Produto {
-    private int idProduto;
+    private int id;
     private String marca;
     private String modelo;
     private String descricao;
     private Double preco;
-    
     private int idTipo;
-    private String tipo;
-    private int idCategoria;
-    private String categoria;
     
     public Produto() {
         
     }
 
-    public Produto(int idProduto, String marca, String modelo, String descricao, Double preco, int idTipo, String tipo, int idCategoria, String categoria) {
-        this.idProduto = idProduto;
+    public Produto(int id, String marca, String descricao, Double preco, int idTipo) {
+        this.id = id;
         this.marca = marca;
-        this.modelo = modelo;
         this.descricao = descricao;
         this.preco = preco;
         this.idTipo = idTipo;
-        this.tipo = tipo;
-        this.idCategoria = idCategoria;
-        this.categoria = categoria;
     }
 
-    public int getIdProduto() {
-        return idProduto;
+    public int getId() {
+        return id;
     }
 
-    public void setIdProduto(int idProduto) {
-        this.idProduto = idProduto;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getMarca() {
@@ -78,29 +70,4 @@ public class Produto {
     public void setIdTipo(int idTipo) {
         this.idTipo = idTipo;
     }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-
-    public int getIdCategoria() {
-        return idCategoria;
-    }
-
-    public void setIdCategoria(int idCategoria) {
-        this.idCategoria = idCategoria;
-    }
-
-    public String getCategoria() {
-        return categoria;
-    }
-
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
-    }
-    
 }
