@@ -88,7 +88,7 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
 
         labelEstadoCivilCliente.setText("ESTADO CIVIL *");
 
-        comboBoxEstadoCivilCliente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione -", "Solteiro(a)" }));
+        comboBoxEstadoCivilCliente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione -", "Solteiro(a)", "Casado(a)" }));
         comboBoxEstadoCivilCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboBoxEstadoCivilClienteActionPerformed(evt);
@@ -434,7 +434,6 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
         String enderecoNumero = textFieldNumeroEnderecoCliente.getText();
         String complemento = textFieldComplementoCliente.getText();
         String email = textFieldEmailCliente.getText();
-        
         String telefonePrimario = validador.ValidarTelefone(frmtTextFieldNumeroPrimarioCliente);
         String telefoneSecundario = validador.ValidarTelefone(frmtTextFieldNumeroSecundarioCliente);
         
