@@ -25,7 +25,6 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
         menuRelatorio = new javax.swing.JMenu();
         menuItemRelatorios = new javax.swing.JMenuItem();
         menuGerenciar = new javax.swing.JMenu();
-        menuItemEstoque = new javax.swing.JMenuItem();
         menuGerenciarCliente = new javax.swing.JMenu();
         menuItemNovoCliente = new javax.swing.JMenuItem();
         menuItemCACliente = new javax.swing.JMenuItem();
@@ -34,7 +33,6 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
         menuItemCAFuncionario = new javax.swing.JMenuItem();
         menuGerenciarProduto = new javax.swing.JMenu();
         menuItemNovoProduto = new javax.swing.JMenuItem();
-        menuItemCAProduto = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menu Principal");
@@ -53,7 +51,7 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
         );
         DesktopPaneMenuPrincipalLayout.setVerticalGroup(
             DesktopPaneMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 621, Short.MAX_VALUE)
+            .addGap(0, 693, Short.MAX_VALUE)
         );
 
         labelIdFuncionarioLogado.setBackground(new java.awt.Color(255, 255, 255));
@@ -82,7 +80,8 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(labelNomeFuncionarioLogado)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(DesktopPaneMenuPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(DesktopPaneMenuPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         menuOrcamento.setText("Orçamento");
@@ -110,14 +109,6 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
         formMenuPrincipalMenuBar.add(menuRelatorio);
 
         menuGerenciar.setText("Gerenciar");
-
-        menuItemEstoque.setText("Estoque");
-        menuItemEstoque.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuItemEstoqueActionPerformed(evt);
-            }
-        });
-        menuGerenciar.add(menuItemEstoque);
 
         menuGerenciarCliente.setText("Cliente");
 
@@ -161,21 +152,13 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
 
         menuGerenciarProduto.setText("Produto");
 
-        menuItemNovoProduto.setText("Novo...");
+        menuItemNovoProduto.setText("Manutenção");
         menuItemNovoProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuItemNovoProdutoActionPerformed(evt);
             }
         });
         menuGerenciarProduto.add(menuItemNovoProduto);
-
-        menuItemCAProduto.setText("Consultar / Alterar");
-        menuItemCAProduto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuItemCAProdutoActionPerformed(evt);
-            }
-        });
-        menuGerenciarProduto.add(menuItemCAProduto);
 
         menuGerenciar.add(menuGerenciarProduto);
 
@@ -204,14 +187,8 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
         cadastroCliente.setVisible(true);
     }//GEN-LAST:event_menuItemNovoClienteActionPerformed
 
-    private void menuItemEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemEstoqueActionPerformed
-        GerenciarEstoque gerenciarEstoque = new GerenciarEstoque();
-        DesktopPaneMenuPrincipal.add(gerenciarEstoque);
-        gerenciarEstoque.setVisible(true);
-    }//GEN-LAST:event_menuItemEstoqueActionPerformed
-
     private void menuItemCAClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemCAClienteActionPerformed
-        ConsultaAlteraCliente consultaAlteraCliente = new ConsultaAlteraCliente();
+        ManutencaoCliente consultaAlteraCliente = new ManutencaoCliente();
         DesktopPaneMenuPrincipal.add(consultaAlteraCliente);
         consultaAlteraCliente.setVisible(true);
     }//GEN-LAST:event_menuItemCAClienteActionPerformed
@@ -223,7 +200,7 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_menuItemNovoFuncionarioActionPerformed
 
     private void menuItemCAFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemCAFuncionarioActionPerformed
-        ConsultaAlteraFuncionario consultaAlteraFuncionario = new ConsultaAlteraFuncionario();
+        ManutencaoFuncionario consultaAlteraFuncionario = new ManutencaoFuncionario();
         DesktopPaneMenuPrincipal.add(consultaAlteraFuncionario);
         consultaAlteraFuncionario.setVisible(true);
     }//GEN-LAST:event_menuItemCAFuncionarioActionPerformed
@@ -233,12 +210,6 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
         DesktopPaneMenuPrincipal.add(cadastroProduto);
         cadastroProduto.setVisible(true);
     }//GEN-LAST:event_menuItemNovoProdutoActionPerformed
-
-    private void menuItemCAProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemCAProdutoActionPerformed
-        ConsultaAlteraProduto consultaAlteraProduto = new ConsultaAlteraProduto();
-        DesktopPaneMenuPrincipal.add(consultaAlteraProduto);
-        consultaAlteraProduto.setVisible(true);
-    }//GEN-LAST:event_menuItemCAProdutoActionPerformed
 
     private void menuItemRelatoriosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemRelatoriosActionPerformed
         GerarRelatorio gerarRelatorio = new GerarRelatorio();
@@ -298,8 +269,6 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu menuGerenciarProduto;
     private javax.swing.JMenuItem menuItemCACliente;
     private javax.swing.JMenuItem menuItemCAFuncionario;
-    private javax.swing.JMenuItem menuItemCAProduto;
-    private javax.swing.JMenuItem menuItemEstoque;
     private javax.swing.JMenuItem menuItemGerarPedido;
     private javax.swing.JMenuItem menuItemNovoCliente;
     private javax.swing.JMenuItem menuItemNovoFuncionario;

@@ -39,14 +39,6 @@
             <Property name="text" type="java.lang.String" value="Gerenciar"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="menuItemEstoque">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Estoque"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuItemEstoqueActionPerformed"/>
-              </Events>
-            </MenuItem>
             <Menu class="javax.swing.JMenu" name="menuGerenciarCliente">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cliente"/>
@@ -100,18 +92,10 @@
               <SubComponents>
                 <MenuItem class="javax.swing.JMenuItem" name="menuItemNovoProduto">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Novo..."/>
+                    <Property name="text" type="java.lang.String" value="Manuten&#xe7;&#xe3;o"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuItemNovoProdutoActionPerformed"/>
-                  </Events>
-                </MenuItem>
-                <MenuItem class="javax.swing.JMenuItem" name="menuItemCAProduto">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Consultar / Alterar"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuItemCAProdutoActionPerformed"/>
                   </Events>
                 </MenuItem>
               </SubComponents>
@@ -188,6 +172,7 @@
                   <Component id="labelNomeFuncionarioLogado" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="DesktopPaneMenuPrincipal" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -208,7 +193,7 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="621" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="693" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
