@@ -123,4 +123,17 @@ public class Validador {
         
     }
 
+    public Double validarDouble(JFormattedTextField campoFormatado) {
+        Double valor = 0.0;
+
+        try {
+            String texto = campoFormatado.getText();
+            valor = Double.parseDouble(texto);
+        }
+        catch (Exception ex) {
+            
+        }
+        return valor;
+    }
+    
 }
