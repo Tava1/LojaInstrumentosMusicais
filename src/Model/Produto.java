@@ -10,6 +10,7 @@ public class Produto {
     private String descricao;
     private Double preco;
     private int idTipo;
+    private int quantidade;
     
     public Produto() {
         
@@ -69,5 +70,14 @@ public class Produto {
 
     public void setIdTipo(int idTipo) {
         this.idTipo = idTipo;
+    }
+
+    // Estoque
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
     }
 }
