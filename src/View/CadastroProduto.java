@@ -40,15 +40,16 @@ public class CadastroProduto extends javax.swing.JInternalFrame {
         textFieldQuantidadeEstoque = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         panelAcoesCadProduto = new javax.swing.JPanel();
-        buttonCadastrarProduto = new javax.swing.JButton();
         buttonCancelarCadastroProduto = new javax.swing.JButton();
         LabelCamposObrigatorioCliente = new javax.swing.JLabel();
-        buttonDeletarProduto = new javax.swing.JButton();
-        buttonSalvarAlteracaoProduto = new javax.swing.JToggleButton();
+        jPanel2 = new javax.swing.JPanel();
         buttonSelecionarProduto = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableProdutos = new javax.swing.JTable();
+        jPanel1 = new javax.swing.JPanel();
+        buttonSalvarAlteracaoProduto = new javax.swing.JToggleButton();
+        buttonDeletarProduto = new javax.swing.JButton();
+        buttonCadastrarProduto = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -133,7 +134,7 @@ public class CadastroProduto extends javax.swing.JInternalFrame {
                                     .addComponent(labelModeloProduto)
                                     .addComponent(textFieldModeloProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(labelDescricaoProduto))
-                        .addGap(0, 390, Short.MAX_VALUE))
+                        .addGap(0, 581, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCaracteristicasProdutoLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(panelCaracteristicasProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -171,30 +172,31 @@ public class CadastroProduto extends javax.swing.JInternalFrame {
                 .addContainerGap())
         );
 
-        panelAcoesCadProduto.setBackground(new java.awt.Color(51, 153, 255));
-
-        buttonCadastrarProduto.setText("ENVIAR");
-        buttonCadastrarProduto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonCadastrarProdutoActionPerformed(evt);
-            }
-        });
+        panelAcoesCadProduto.setBackground(new java.awt.Color(255, 255, 255));
 
         buttonCancelarCadastroProduto.setText("CANCELAR");
 
-        buttonDeletarProduto.setText("DELETAR");
-        buttonDeletarProduto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonDeletarProdutoActionPerformed(evt);
-            }
-        });
+        javax.swing.GroupLayout panelAcoesCadProdutoLayout = new javax.swing.GroupLayout(panelAcoesCadProduto);
+        panelAcoesCadProduto.setLayout(panelAcoesCadProdutoLayout);
+        panelAcoesCadProdutoLayout.setHorizontalGroup(
+            panelAcoesCadProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelAcoesCadProdutoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(LabelCamposObrigatorioCliente)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(buttonCancelarCadastroProduto))
+        );
+        panelAcoesCadProdutoLayout.setVerticalGroup(
+            panelAcoesCadProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAcoesCadProdutoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(panelAcoesCadProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonCancelarCadastroProduto)
+                    .addComponent(LabelCamposObrigatorioCliente))
+                .addContainerGap())
+        );
 
-        buttonSalvarAlteracaoProduto.setText("SALVAR");
-        buttonSalvarAlteracaoProduto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonSalvarAlteracaoProdutoActionPerformed(evt);
-            }
-        });
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
         buttonSelecionarProduto.setText("SELECIONAR");
         buttonSelecionarProduto.addActionListener(new java.awt.event.ActionListener() {
@@ -203,50 +205,9 @@ public class CadastroProduto extends javax.swing.JInternalFrame {
             }
         });
 
-        javax.swing.GroupLayout panelAcoesCadProdutoLayout = new javax.swing.GroupLayout(panelAcoesCadProduto);
-        panelAcoesCadProduto.setLayout(panelAcoesCadProdutoLayout);
-        panelAcoesCadProdutoLayout.setHorizontalGroup(
-            panelAcoesCadProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelAcoesCadProdutoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(panelAcoesCadProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelAcoesCadProdutoLayout.createSequentialGroup()
-                        .addComponent(LabelCamposObrigatorioCliente)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 683, Short.MAX_VALUE)
-                        .addComponent(buttonCancelarCadastroProduto)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(buttonCadastrarProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelAcoesCadProdutoLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(buttonSelecionarProduto)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(buttonDeletarProduto)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(buttonSalvarAlteracaoProduto)))
-                .addContainerGap())
-        );
-        panelAcoesCadProdutoLayout.setVerticalGroup(
-            panelAcoesCadProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAcoesCadProdutoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(panelAcoesCadProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonDeletarProduto)
-                    .addComponent(buttonSalvarAlteracaoProduto)
-                    .addComponent(buttonSelecionarProduto))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(panelAcoesCadProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonCadastrarProduto)
-                    .addComponent(buttonCancelarCadastroProduto)
-                    .addComponent(LabelCamposObrigatorioCliente))
-                .addContainerGap())
-        );
-
         tableProdutos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
+
             },
             new String [] {
                 "ID Produto", "Marca", "Modelo", "Descrição", "Preço", "Estoque", "Categoria", "Tipo"
@@ -254,48 +215,107 @@ public class CadastroProduto extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(tableProdutos);
 
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1077, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(buttonSelecionarProduto)))
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(buttonSelecionarProduto)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        buttonSalvarAlteracaoProduto.setText("SALVAR");
+        buttonSalvarAlteracaoProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSalvarAlteracaoProdutoActionPerformed(evt);
+            }
+        });
+
+        buttonDeletarProduto.setText("DELETAR");
+        buttonDeletarProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonDeletarProdutoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(buttonDeletarProduto)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(buttonSalvarAlteracaoProduto)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(248, 248, 248))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonSalvarAlteracaoProduto)
+                    .addComponent(buttonDeletarProduto))
+                .addContainerGap(7, Short.MAX_VALUE))
         );
+
+        buttonCadastrarProduto.setText("CADASTRAR NOVO");
+        buttonCadastrarProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonCadastrarProdutoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelGeralCadastroProdutoLayout = new javax.swing.GroupLayout(panelGeralCadastroProduto);
         panelGeralCadastroProduto.setLayout(panelGeralCadastroProdutoLayout);
         panelGeralCadastroProdutoLayout.setHorizontalGroup(
             panelGeralCadastroProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelGeralCadastroProdutoLayout.createSequentialGroup()
+            .addComponent(panelFiltroProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelCaracteristicasProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGeralCadastroProdutoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelGeralCadastroProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panelFiltroProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panelCaracteristicasProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panelAcoesCadProduto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(panelAcoesCadProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(buttonCadastrarProduto)
                 .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         panelGeralCadastroProdutoLayout.setVerticalGroup(
             panelGeralCadastroProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGeralCadastroProdutoLayout.createSequentialGroup()
-                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(panelFiltroProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(panelCaracteristicasProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(panelAcoesCadProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(panelGeralCadastroProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelGeralCadastroProdutoLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(panelAcoesCadProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(panelGeralCadastroProdutoLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(buttonCadastrarProduto)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -347,11 +367,11 @@ public class CadastroProduto extends javax.swing.JInternalFrame {
             
             if (ProdutoController.deletarProduto(idProduto)) {
                 ProdutoController.buscarProdutos(tableProdutos);
-                JOptionPane.showMessageDialog(null, "Produto Deletado com sucesso!");
+                JOptionPane.showMessageDialog(null, "Produto deletado com sucesso!");
             }
             else {
                 ProdutoController.buscarProdutos(tableProdutos);
-                JOptionPane.showMessageDialog(null, "Houve algum problema ao deletar cliente, tente novamente.");
+                JOptionPane.showMessageDialog(null, "Houve algum problema ao deletar produto, tente novamente.");
             }
         }
     }//GEN-LAST:event_buttonDeletarProdutoActionPerformed
@@ -418,6 +438,7 @@ public class CadastroProduto extends javax.swing.JInternalFrame {
     private javax.swing.JFormattedTextField frmtPrecoProduto;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelCategoriaProduto;
     private javax.swing.JLabel labelDescricaoProduto;
