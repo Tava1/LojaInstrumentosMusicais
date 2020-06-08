@@ -427,7 +427,7 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
 
         String nome = textFieldNomeCliente.getText();
         int genero = comboBoxGeneroCliente.getSelectedIndex();
-        int estadoCivil = comboBoxGeneroCliente.getSelectedIndex();
+        int estadoCivil = comboBoxEstadoCivilCliente.getSelectedIndex();
         Date dataNascimento = dtChooserDataNascimento.getDate();
         String cpf = validador.ValidarCPF(frmtTextFieldCpfCliente);
         String endereco = textFieldEnderecoCliente.getText();

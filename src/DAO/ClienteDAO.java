@@ -135,7 +135,7 @@ public class ClienteDAO {
             
             // Criar query SQL filtrando por nome
             preparedStatement = connection.prepareStatement("SELECT * FROM Cliente WHERE Nome LIKE ?;");
-            preparedStatement.setString(1, nome + "%");
+            preparedStatement.setString(1, "%" + nome + "%");
             
             resultSet = preparedStatement.executeQuery();
             
