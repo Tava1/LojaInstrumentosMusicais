@@ -88,9 +88,9 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        menuOrcamento.setText("Orçamento");
+        menuOrcamento.setText("Venda");
 
-        menuItemGerarPedido.setText("Gerar Pedido");
+        menuItemGerarPedido.setText("Realizar Venda");
         menuItemGerarPedido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuItemGerarPedidoActionPerformed(evt);
