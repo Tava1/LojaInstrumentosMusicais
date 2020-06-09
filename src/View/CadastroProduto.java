@@ -134,7 +134,7 @@ public class CadastroProduto extends javax.swing.JInternalFrame {
                                     .addComponent(labelModeloProduto)
                                     .addComponent(textFieldModeloProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(labelDescricaoProduto))
-                        .addGap(0, 581, Short.MAX_VALUE))
+                        .addGap(0, 590, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCaracteristicasProdutoLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(panelCaracteristicasProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -175,6 +175,11 @@ public class CadastroProduto extends javax.swing.JInternalFrame {
         panelAcoesCadProduto.setBackground(new java.awt.Color(255, 255, 255));
 
         buttonCancelarCadastroProduto.setText("CANCELAR");
+        buttonCancelarCadastroProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonCancelarCadastroProdutoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelAcoesCadProdutoLayout = new javax.swing.GroupLayout(panelAcoesCadProduto);
         panelAcoesCadProduto.setLayout(panelAcoesCadProdutoLayout);
@@ -190,7 +195,7 @@ public class CadastroProduto extends javax.swing.JInternalFrame {
             panelAcoesCadProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAcoesCadProdutoLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(panelAcoesCadProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(panelAcoesCadProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(buttonCancelarCadastroProduto)
                     .addComponent(LabelCamposObrigatorioCliente))
                 .addContainerGap())
@@ -222,7 +227,7 @@ public class CadastroProduto extends javax.swing.JInternalFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1077, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1086, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(buttonSelecionarProduto)))
@@ -424,6 +429,10 @@ public class CadastroProduto extends javax.swing.JInternalFrame {
             }
         }
     }//GEN-LAST:event_buttonSalvarAlteracaoProdutoActionPerformed
+
+    private void buttonCancelarCadastroProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCancelarCadastroProdutoActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_buttonCancelarCadastroProdutoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

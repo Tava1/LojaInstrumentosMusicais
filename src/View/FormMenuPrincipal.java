@@ -9,6 +9,7 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
 
     public FormMenuPrincipal() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     @SuppressWarnings("unchecked")
@@ -22,8 +23,6 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
         formMenuPrincipalMenuBar = new javax.swing.JMenuBar();
         menuOrcamento = new javax.swing.JMenu();
         menuItemGerarPedido = new javax.swing.JMenuItem();
-        menuRelatorio = new javax.swing.JMenu();
-        menuItemRelatorios = new javax.swing.JMenuItem();
         menuGerenciar = new javax.swing.JMenu();
         menuGerenciarCliente = new javax.swing.JMenu();
         menuItemNovoCliente = new javax.swing.JMenuItem();
@@ -33,6 +32,8 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
         menuItemCAFuncionario = new javax.swing.JMenuItem();
         menuGerenciarProduto = new javax.swing.JMenu();
         menuItemNovoProduto = new javax.swing.JMenuItem();
+        menuRelatorio = new javax.swing.JMenu();
+        menuItemRelatorios = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menu Principal");
@@ -47,7 +48,7 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
         DesktopPaneMenuPrincipal.setLayout(DesktopPaneMenuPrincipalLayout);
         DesktopPaneMenuPrincipalLayout.setHorizontalGroup(
             DesktopPaneMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1462, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         DesktopPaneMenuPrincipalLayout.setVerticalGroup(
             DesktopPaneMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -66,14 +67,14 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
         panelMenuPrincipalLayout.setHorizontalGroup(
             panelMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelMenuPrincipalLayout.createSequentialGroup()
-                .addGap(871, 871, 871)
+                .addGap(827, 1127, Short.MAX_VALUE)
                 .addGroup(panelMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(labelNomeFuncionarioLogado)
                     .addComponent(labelIdFuncionarioLogado))
                 .addGap(66, 66, 66))
             .addGroup(panelMenuPrincipalLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(DesktopPaneMenuPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(DesktopPaneMenuPrincipal)
                 .addContainerGap())
         );
         panelMenuPrincipalLayout.setVerticalGroup(
@@ -99,18 +100,6 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
         menuOrcamento.add(menuItemGerarPedido);
 
         formMenuPrincipalMenuBar.add(menuOrcamento);
-
-        menuRelatorio.setText("Relatório");
-
-        menuItemRelatorios.setText("Emitir Relatórios");
-        menuItemRelatorios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuItemRelatoriosActionPerformed(evt);
-            }
-        });
-        menuRelatorio.add(menuItemRelatorios);
-
-        formMenuPrincipalMenuBar.add(menuRelatorio);
 
         menuGerenciar.setText("Gerenciar");
 
@@ -167,6 +156,18 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
         menuGerenciar.add(menuGerenciarProduto);
 
         formMenuPrincipalMenuBar.add(menuGerenciar);
+
+        menuRelatorio.setText("Relatório");
+
+        menuItemRelatorios.setText("Emitir Relatórios");
+        menuItemRelatorios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemRelatoriosActionPerformed(evt);
+            }
+        });
+        menuRelatorio.add(menuItemRelatorios);
+
+        formMenuPrincipalMenuBar.add(menuRelatorio);
 
         setJMenuBar(formMenuPrincipalMenuBar);
 

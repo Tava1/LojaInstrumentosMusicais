@@ -1,11 +1,10 @@
 package View;
 
-import Controller.ClienteController;
 import Utils.Validador;
-import java.awt.Color;
 import javax.swing.JOptionPane;
 import java.util.Date;
 import Controller.ClienteController;
+import java.awt.Dimension;
 
 /**
  * @author Gustavo Santos
@@ -245,7 +244,7 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
                         .addComponent(labelNumeroSCliente)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(panelDadosCobrancaClienteLayout.createSequentialGroup()
-                        .addComponent(textFieldEmailCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 408, Short.MAX_VALUE)
+                        .addComponent(textFieldEmailCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 596, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(frmtTextFieldNumeroPrimarioCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -327,7 +326,7 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
         panelAcoesClienteLayout.setVerticalGroup(
             panelAcoesClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelAcoesClienteLayout.createSequentialGroup()
-                .addContainerGap(95, Short.MAX_VALUE)
+                .addContainerGap(262, Short.MAX_VALUE)
                 .addGroup(panelAcoesClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buttonCriarCliente)
                     .addComponent(buttonCancelarCliente)
@@ -463,7 +462,7 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_buttonCriarClienteActionPerformed
 
     private void buttonCancelarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCancelarClienteActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
     }//GEN-LAST:event_buttonCancelarClienteActionPerformed
 
     private void textFieldNomeClienteKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textFieldNomeClienteKeyPressed
@@ -504,7 +503,4 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
     private javax.swing.JTextField textFieldNumeroEnderecoCliente;
     // End of variables declaration//GEN-END:variables
 
-    public void ExibirMensagem(String mensagem) {
-        JOptionPane.showMessageDialog(null, mensagem);
-    }
 }

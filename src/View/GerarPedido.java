@@ -186,7 +186,7 @@ public class GerarPedido extends javax.swing.JInternalFrame {
                         .addComponent(buttonBuscarProdutoPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(10, 10, 10)
                 .addComponent(scrollPaneEstanteProdutosPedidos, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addComponent(buttonAdicionarItemPedido)
                 .addContainerGap())
         );
@@ -222,6 +222,11 @@ public class GerarPedido extends javax.swing.JInternalFrame {
         });
 
         buttonCancelarPedido.setText("CANCELAR");
+        buttonCancelarPedido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonCancelarPedidoActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("DELETAR ITEM");
 
@@ -232,7 +237,7 @@ public class GerarPedido extends javax.swing.JInternalFrame {
             .addGroup(panelCarrinhoPedidoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panelCarrinhoPedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(scrollPaneCarrinhoPedido, javax.swing.GroupLayout.DEFAULT_SIZE, 1065, Short.MAX_VALUE)
+                    .addComponent(scrollPaneCarrinhoPedido, javax.swing.GroupLayout.DEFAULT_SIZE, 1064, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCarrinhoPedidoLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(panelCarrinhoPedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -383,6 +388,10 @@ public class GerarPedido extends javax.swing.JInternalFrame {
         
         
     }//GEN-LAST:event_buttonAdicionarItemPedidoActionPerformed
+
+    private void buttonCancelarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCancelarPedidoActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_buttonCancelarPedidoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
