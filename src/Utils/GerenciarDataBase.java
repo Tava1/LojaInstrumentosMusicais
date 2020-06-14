@@ -12,7 +12,7 @@ public class GerenciarDataBase {
     static String STATUS = "Banco de dados não conectado.";
     static String DRIVER = "com.mysql.cj.jdbc.Driver";                   
     static String SERVER = "localhost";
-    static String DATABASE = "lojainstrumentosmusicais";              
+    static String DATABASE = "lojaintrumentosmusicais";              
     static String LOGIN = "root";                           
     static String SENHA = "";                         
     static String URL = "";

@@ -13,22 +13,6 @@ public class Validador {
         
     }
     
-    public boolean ValidarLogin(JTextField campo, JPasswordField campoSenha){
-//        if(campo.getText().length() < 6 && campo.getText().length() > 6) {
-//            throw new IllegalArgumentException("Login inválido, lembre-se que o login deve possuir 6 caracteres.");
-//        } 
-//        if (campoSenha.getText().length() < 8 && campoSenha.getText().length() > 16) {
-//            throw new IllegalArgumentException("Senha inválido, Mínimo 8 e Máximo 16 caracteres.");
-//        }
-
-        if(campo.getText().length() < 6 || campo.getText().length() > 6) {
-            return false;
-        } 
-        if (campoSenha.getText().length() < 8 || campoSenha.getText().length() > 16) {
-            return false;
-        }
-        return true;
-    }
     
     public void ValidarNumero(JTextField campo){
     
@@ -67,6 +51,10 @@ public class Validador {
         }
     }
     
+    /**
+    *
+    * @param Valida se o usuario selecionou um opcao valida em combobox Obrigatorio.
+    */
     public void ValidarComboBox(JComboBox comboBox, JLabel labelComboBox, JLabel retornoGeral){
         if (comboBox.getSelectedIndex() == 0){
             retornoGeral.setText("* Obrigatóirio preencher campos destacados em vermelho");
@@ -79,30 +67,29 @@ public class Validador {
         }
     }
     
-    public void ValidarCampoVazioFormatado(JFormattedTextField campoFormatado){
-        //TODO: O nome do metodo ja diz.
-    }
     
-    public void ValidarCampoDinheiroVazio(JFormattedTextField campoFormatado){
-        //TODO: O nome do metodo ja diz.
-    }
-
+    /**
+    * @param Valida CPF, limpa toda a formatacao e verifica se o usuario digitou uma sequencia numerica.
+    */
     public String ValidarCPF(JFormattedTextField cpfFormatado) {
         String cpfValido = cpfFormatado.getText();
         
         cpfValido = cpfValido.replace("-", "");
         cpfValido = cpfValido.replace(".", "");
+        cpfValido = cpfValido.replace(" ", "");
         
-//        try {
-//            Integer retorno = Integer.parseInt(cpfValido);
-//        } 
-//        catch (NumberFormatException e) {
-//            JOptionPane.showMessageDialog(null, "CPF inválido." + e);
-//        }
+        try {
+            Integer retorno = Integer.parseInt(cpfValido);
+        } 
+        catch (NumberFormatException e) {
+            //JOptionPane.showMessageDialog(null, "CPF inválido." + e);
+        }
         
         return cpfValido;
     }
-    
+    /**
+    * @param Valida Numeros de telefones, limpa toda a formatacao.
+    */
     public String ValidarTelefone(JFormattedTextField telefoneFormatado) {
         String telefone = telefoneFormatado.getText();
         
@@ -111,18 +98,12 @@ public class Validador {
         telefone = telefone.replace(" ", "");
         telefone = telefone.replace("-", "");
 
-
-//        try {
-//            Integer retorno = Integer.parseInt(cpfValido);
-//        } 
-//        catch (NumberFormatException e) {
-//            JOptionPane.showMessageDialog(null, "CPF inválido." + e);
-//        }
-        
         return telefone;
-        
     }
-
+    
+    /**
+    * @param Valida se o usuario digitou um valor valido para double.
+    */
     public Double validarDouble(JFormattedTextField campoFormatado) {
         Double valor = 0.0;
 
