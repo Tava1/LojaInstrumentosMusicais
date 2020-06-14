@@ -47,29 +47,6 @@
                 </MenuItem>
               </SubComponents>
             </Menu>
-            <Menu class="javax.swing.JMenu" name="menuGerenciarFuncionario">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Funcion&#xe1;rio"/>
-              </Properties>
-              <SubComponents>
-                <MenuItem class="javax.swing.JMenuItem" name="menuItemNovoFuncionario">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Novo..."/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuItemNovoFuncionarioActionPerformed"/>
-                  </Events>
-                </MenuItem>
-                <MenuItem class="javax.swing.JMenuItem" name="menuItemCAFuncionario">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Consultar / Alterar"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuItemCAFuncionarioActionPerformed"/>
-                  </Events>
-                </MenuItem>
-              </SubComponents>
-            </Menu>
             <Menu class="javax.swing.JMenu" name="menuGerenciarProduto">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Produto"/>
@@ -154,7 +131,7 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace min="827" pref="1127" max="32767" attributes="0"/>
+                  <EmptySpace min="827" pref="1180" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="labelNomeFuncionarioLogado" min="-2" max="-2" attributes="0"/>
                       <Component id="labelIdFuncionarioLogado" min="-2" max="-2" attributes="0"/>
@@ -198,7 +175,7 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="693" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="711" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>

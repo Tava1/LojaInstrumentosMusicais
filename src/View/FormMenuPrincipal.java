@@ -27,9 +27,6 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
         menuGerenciarCliente = new javax.swing.JMenu();
         menuItemNovoCliente = new javax.swing.JMenuItem();
         menuItemCACliente = new javax.swing.JMenuItem();
-        menuGerenciarFuncionario = new javax.swing.JMenu();
-        menuItemNovoFuncionario = new javax.swing.JMenuItem();
-        menuItemCAFuncionario = new javax.swing.JMenuItem();
         menuGerenciarProduto = new javax.swing.JMenu();
         menuItemNovoProduto = new javax.swing.JMenuItem();
         menuRelatorio = new javax.swing.JMenu();
@@ -52,7 +49,7 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
         );
         DesktopPaneMenuPrincipalLayout.setVerticalGroup(
             DesktopPaneMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 693, Short.MAX_VALUE)
+            .addGap(0, 711, Short.MAX_VALUE)
         );
 
         labelIdFuncionarioLogado.setBackground(new java.awt.Color(255, 255, 255));
@@ -67,7 +64,7 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
         panelMenuPrincipalLayout.setHorizontalGroup(
             panelMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelMenuPrincipalLayout.createSequentialGroup()
-                .addGap(827, 1127, Short.MAX_VALUE)
+                .addGap(827, 1180, Short.MAX_VALUE)
                 .addGroup(panelMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(labelNomeFuncionarioLogado)
                     .addComponent(labelIdFuncionarioLogado))
@@ -123,26 +120,6 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
 
         menuGerenciar.add(menuGerenciarCliente);
 
-        menuGerenciarFuncionario.setText("Funcionário");
-
-        menuItemNovoFuncionario.setText("Novo...");
-        menuItemNovoFuncionario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuItemNovoFuncionarioActionPerformed(evt);
-            }
-        });
-        menuGerenciarFuncionario.add(menuItemNovoFuncionario);
-
-        menuItemCAFuncionario.setText("Consultar / Alterar");
-        menuItemCAFuncionario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuItemCAFuncionarioActionPerformed(evt);
-            }
-        });
-        menuGerenciarFuncionario.add(menuItemCAFuncionario);
-
-        menuGerenciar.add(menuGerenciarFuncionario);
-
         menuGerenciarProduto.setText("Produto");
 
         menuItemNovoProduto.setText("Manutenção");
@@ -197,18 +174,6 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
         DesktopPaneMenuPrincipal.add(consultaAlteraCliente);
         consultaAlteraCliente.setVisible(true);
     }//GEN-LAST:event_menuItemCAClienteActionPerformed
-
-    private void menuItemNovoFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemNovoFuncionarioActionPerformed
-        CadastroFuncionario cadastroFuncionario = new CadastroFuncionario();
-        DesktopPaneMenuPrincipal.add(cadastroFuncionario);
-        cadastroFuncionario.setVisible(true);
-    }//GEN-LAST:event_menuItemNovoFuncionarioActionPerformed
-
-    private void menuItemCAFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemCAFuncionarioActionPerformed
-        ManutencaoFuncionario consultaAlteraFuncionario = new ManutencaoFuncionario();
-        DesktopPaneMenuPrincipal.add(consultaAlteraFuncionario);
-        consultaAlteraFuncionario.setVisible(true);
-    }//GEN-LAST:event_menuItemCAFuncionarioActionPerformed
 
     private void menuItemNovoProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemNovoProdutoActionPerformed
         CadastroProduto cadastroProduto = new CadastroProduto();
@@ -270,13 +235,10 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel labelNomeFuncionarioLogado;
     private javax.swing.JMenu menuGerenciar;
     private javax.swing.JMenu menuGerenciarCliente;
-    private javax.swing.JMenu menuGerenciarFuncionario;
     private javax.swing.JMenu menuGerenciarProduto;
     private javax.swing.JMenuItem menuItemCACliente;
-    private javax.swing.JMenuItem menuItemCAFuncionario;
     private javax.swing.JMenuItem menuItemGerarPedido;
     private javax.swing.JMenuItem menuItemNovoCliente;
-    private javax.swing.JMenuItem menuItemNovoFuncionario;
     private javax.swing.JMenuItem menuItemNovoProduto;
     private javax.swing.JMenuItem menuItemRelatorios;
     private javax.swing.JMenu menuOrcamento;
