@@ -38,6 +38,8 @@ public class GerarRelatorio extends javax.swing.JInternalFrame {
         gerarRelatorioSintetico = new javax.swing.JButton();
         dtInicial = new com.toedter.calendar.JDateChooser();
         dtFinal = new com.toedter.calendar.JDateChooser();
+        jLabel5 = new javax.swing.JLabel();
+        textFieldTotalVendasPeriodo = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         relatorioAnalitico = new javax.swing.JTable();
@@ -89,6 +91,10 @@ public class GerarRelatorio extends javax.swing.JInternalFrame {
             }
         });
 
+        jLabel5.setText("TOTAL DE VENDAS");
+
+        textFieldTotalVendasPeriodo.setEnabled(false);
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -108,7 +114,12 @@ public class GerarRelatorio extends javax.swing.JInternalFrame {
                                 .addComponent(dtFinal, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(gerarRelatorioSintetico)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(textFieldTotalVendasPeriodo, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -124,7 +135,11 @@ public class GerarRelatorio extends javax.swing.JInternalFrame {
                     .addComponent(dtInicial, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(dtFinal, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 211, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(textFieldTotalVendasPeriodo, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -136,7 +151,7 @@ public class GerarRelatorio extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "Codigo do Pedido", "Codigo do Produto", "Quantidade", "Preço UN", "CPF do Cliente"
+
             }
         ));
         jScrollPane2.setViewportView(relatorioAnalitico);
@@ -231,22 +246,11 @@ public class GerarRelatorio extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void gerarRelatorioSinteticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gerarRelatorioSinteticoActionPerformed
-
         Date dataInicial = dtInicial.getDate();
         Date dataFinal = dtFinal.getDate();
-//        
-//        LocalDate startDate = LocalDate.parse(dataInicial.toString()); 
-//  
-//        LocalDate endDate = LocalDate.parse(dataFinal.toString()); 
-//        
-//        Period period = Period.between(startDate, endDate);
-//        
-//        if(period.getDays() < 30) {
-//            
-//        }
 
         if(!dataInicial.toString().isEmpty() && !dataFinal.toString().isEmpty()){
-            RelatorioController.buscarVendas(relatorioSintetico, dataInicial, dataFinal);
+            RelatorioController.buscarVendas(relatorioSintetico, textFieldTotalVendasPeriodo, dataInicial, dataFinal);
         } 
         else {
             JOptionPane.showMessageDialog(null, "Preencha os campos data inicio e data final para emitir um relatório.");
@@ -255,9 +259,9 @@ public class GerarRelatorio extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_gerarRelatorioSinteticoActionPerformed
 
     private void GerarRelatorioAnaliticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GerarRelatorioAnaliticoActionPerformed
-       int codigo = Integer.parseInt(codVenda.getText());
-        
-        RelatorioController.buscarVendas(relatorioAnalitico, codigo, textFieldTotalVenda);
+        int codigo = Integer.parseInt(codVenda.getText());
+        int linhas = relatorioAnalitico.getRowCount();
+        RelatorioController.buscarVendas(relatorioAnalitico, codigo, textFieldTotalVenda, linhas);
     }//GEN-LAST:event_GerarRelatorioAnaliticoActionPerformed
 
 
@@ -271,6 +275,7 @@ public class GerarRelatorio extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -280,5 +285,6 @@ public class GerarRelatorio extends javax.swing.JInternalFrame {
     private javax.swing.JTable relatorioAnalitico;
     private javax.swing.JTable relatorioSintetico;
     private javax.swing.JTextField textFieldTotalVenda;
+    private javax.swing.JTextField textFieldTotalVendasPeriodo;
     // End of variables declaration//GEN-END:variables
 }

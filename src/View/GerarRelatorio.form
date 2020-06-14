@@ -120,6 +120,13 @@
                               </Group>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jLabel5" max="32767" attributes="0"/>
+                                  <Component id="textFieldTotalVendasPeriodo" min="-2" pref="112" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -140,7 +147,11 @@
                           <Component id="dtFinal" min="-2" pref="28" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" pref="211" max="32767" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="161" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="textFieldTotalVendasPeriodo" min="-2" pref="28" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -188,6 +199,16 @@
             <Component class="com.toedter.calendar.JDateChooser" name="dtInicial">
             </Component>
             <Component class="com.toedter.calendar.JDateChooser" name="dtFinal">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel5">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="TOTAL DE VENDAS"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="textFieldTotalVendasPeriodo">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>
@@ -265,13 +286,7 @@
                 <Component class="javax.swing.JTable" name="relatorioAnalitico">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="5" rowCount="0">
-                        <Column editable="true" title="Codigo do Pedido" type="java.lang.Object"/>
-                        <Column editable="true" title="Codigo do Produto" type="java.lang.Object"/>
-                        <Column editable="true" title="Quantidade" type="java.lang.Object"/>
-                        <Column editable="true" title="Pre&#xe7;o UN" type="java.lang.Object"/>
-                        <Column editable="true" title="CPF do Cliente" type="java.lang.Object"/>
-                      </Table>
+                      <Table columnCount="0" rowCount="0"/>
                     </Property>
                   </Properties>
                 </Component>
