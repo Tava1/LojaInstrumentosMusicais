@@ -14,7 +14,7 @@ import java.util.Date;
  * @author Gustavo Santos
  */
 public class VendaDAO {
-    public static boolean criar(Venda pedido) {
+    public static boolean criar(Venda venda) {
         boolean retorno = false;
         Connection connection = null;
         PreparedStatement preparedStatement = null;
@@ -24,26 +24,35 @@ public class VendaDAO {
             
             // Criando query SQL
             preparedStatement = connection.prepareStatement("INSERT INTO pedido (DataPedido, PrecoTotal, IdCliente) VALUES (?, ?, ?);", Statement.RETURN_GENERATED_KEYS);
-            preparedStatement.setDate(1, new java.sql.Date(pedido.getDataPedido().getTime()));
-            preparedStatement.setDouble(2, pedido.getTotal());
-            preparedStatement.setInt(3, pedido.getIdCliente());
+            preparedStatement.setDate(1, new java.sql.Date(venda.getDataPedido().getTime()));
+            preparedStatement.setDouble(2, venda.getTotal());
+            preparedStatement.setInt(3, venda.getIdCliente());
                         
-            int linhasAfetadas = preparedStatement.executeUpdate();
+            int linhasAfetadasPedido = preparedStatement.executeUpdate();
             
             // Criando query SQL
-            preparedStatement = connection.prepareStatement("INSERT INTO detalhepedido (Quantidade, IdPedido, IdProduto) VALUES (?, ?, ?);", Statement.RETURN_GENERATED_KEYS);
-            preparedStatement.setDate(1, new java.sql.Date(pedido.getDataPedido().getTime()));
-            preparedStatement.setDouble(2, pedido.getTotal());
-            preparedStatement.setInt(3, pedido.getIdCliente());
+            preparedStatement = connection.prepareStatement("INSERT INTO detalhepedido (Quantidade, IdProduto, IdPedido) VALUES (?, ?, LAST_INSERT_ID());", Statement.RETURN_GENERATED_KEYS);
+            preparedStatement.setInt(1, venda.getQuantidade());
+            preparedStatement.setInt(2, venda.getIdProduto());
                         
-            int linhasAfetadas2 = preparedStatement.executeUpdate();
+            int linhasAfetadasDetalhe = preparedStatement.executeUpdate();
             
-            if (linhasAfetadas > 0 && linhasAfetadas2 > 0) {
+            // Atualizar a quantidade no estoque do produto
+            preparedStatement = connection.prepareStatement("UPDATE Estoque SET QuantidadeEstoque = QuantidadeEstoque ? WHERE IdProduto = ?;");
+            preparedStatement.setDouble(1, - venda.getQuantidade());
+            //WHERE
+            preparedStatement.setInt(2, venda.getIdProduto());
+                        
+            int linhasAfetadasEstoque = preparedStatement.executeUpdate();
+            
+            
+            
+            if (linhasAfetadasPedido > 0 && linhasAfetadasDetalhe > 0 && linhasAfetadasEstoque > 0) {
                 retorno = true;
                 ResultSet resultSet = preparedStatement.getGeneratedKeys();
                 
                 if (resultSet.next()) {
-                    pedido.setId(resultSet.getInt(1));
+                    venda.setId(resultSet.getInt(1));
                 }
                 else {
                     throw new SQLException("Falha ao obter o ID.");
@@ -171,33 +180,34 @@ public class VendaDAO {
         ResultSet resultSet = null;
         Connection connection = null;
         PreparedStatement preparedStatement = null; 
-        ArrayList<Venda> listaPedido = new ArrayList<Venda>();
+        ArrayList<Venda> listaVenda = new ArrayList<Venda>();
         
         try {
             connection = GerenciarDataBase.abrirConexao();
             
             // Criando Query SQL
-            preparedStatement = connection.prepareStatement("SELECT * FROM pedido WHERE DataPedido >= ? AND DataPedido <= ?");
+            preparedStatement = connection.prepareStatement("SELECT * FROM pedido as p INNER JOIN cliente as c ON p.IdCliente = c.IdCliente WHERE p.DataPedido >= ? AND p.DataPedido <= ?");
             preparedStatement.setDate(1, new java.sql.Date(dataInicial.getTime()));
             preparedStatement.setDate(2, new java.sql.Date(dataFinal.getTime()));
 
             resultSet = preparedStatement.executeQuery();
             
             while(resultSet.next()) {
-                Venda pedido = new Venda();
+                Venda venda = new Venda();
                 
-                pedido.setId(resultSet.getInt("IdPedido"));
-                pedido.setDataPedido(resultSet.getDate("DataPedido"));
-                pedido.setTotal(resultSet.getDouble("PrecoTotal"));
-                pedido.setIdCliente(Integer.parseInt(resultSet.getString("IdCliente")));
-
+                venda.setId(resultSet.getInt("IdPedido"));
+                venda.setDataPedido(resultSet.getDate("DataPedido"));
+                venda.setTotal(resultSet.getDouble("PrecoTotal"));
+                venda.setIdCliente(Integer.parseInt(resultSet.getString("IdCliente")));
+                venda.setCPFCliente(resultSet.getString("CPF"));
+                
                 // Adiciona cada pedido a lista de clientes
-                listaPedido.add(pedido);
+                listaVenda.add(venda);
                 
             }
         } 
         catch (SQLException | ClassNotFoundException ex) {
-            listaPedido = null;
+            listaVenda = null;
         }
         finally {
             try {
@@ -212,43 +222,8 @@ public class VendaDAO {
             }
         }
         
-        return listaPedido;
+        return listaVenda;
     }
     
-    public static boolean deletar(int id) {
-        boolean retorno;
-        Connection connection = null;
-        PreparedStatement preparedStatement = null;
-        
-        try {
-            connection = GerenciarDataBase.abrirConexao();
-            
-            preparedStatement = connection.prepareStatement("DELETE FROM cliente WHERE IdCliente = ?;");
-            preparedStatement.setInt(1, id);
-            
-            int linhasAfetadas = preparedStatement.executeUpdate();
-            
-            if (linhasAfetadas > 0) 
-                retorno = true;
-            else
-                retorno = false;
-            
-        } 
-        catch (SQLException | ClassNotFoundException ex) {
-            retorno = false;
-        }
-        finally {
-            try {
-                if (preparedStatement != null)
-                   preparedStatement.close();
-
-                GerenciarDataBase.fecharConexao();
-            }
-            catch (SQLException ex) {
-                
-            }
-        }
-        
-        return retorno;
-   }
+    
 }
