@@ -40,7 +40,6 @@ public class CadastroProduto extends javax.swing.JInternalFrame {
         textFieldQuantidadeEstoque = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         panelAcoesCadProduto = new javax.swing.JPanel();
-        buttonCancelarCadastroProduto = new javax.swing.JButton();
         LabelCamposObrigatorioCliente = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         buttonSelecionarProduto = new javax.swing.JButton();
@@ -50,6 +49,7 @@ public class CadastroProduto extends javax.swing.JInternalFrame {
         buttonSalvarAlteracaoProduto = new javax.swing.JToggleButton();
         buttonDeletarProduto = new javax.swing.JButton();
         buttonCadastrarProduto = new javax.swing.JButton();
+        buttonCancelarCadastroProduto = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -63,11 +63,11 @@ public class CadastroProduto extends javax.swing.JInternalFrame {
 
         labelCategoriaProduto.setText("CATEGORIA *");
 
-        comboBoxCategoriaProduto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione -", "Cordas", "Percussão" }));
+        comboBoxCategoriaProduto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione -", "Percussão", "Cordas", "Sopro" }));
 
         labelTipoProduto.setText("TIPO *");
 
-        comboBoxTipoProduto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione -", "Violão", "Guitarra" }));
+        comboBoxTipoProduto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione -", "Pratos", "Tambores", "Guitarras", "Violões", "Saxofones", "Flautas" }));
 
         javax.swing.GroupLayout panelFiltroProdutoLayout = new javax.swing.GroupLayout(panelFiltroProduto);
         panelFiltroProduto.setLayout(panelFiltroProdutoLayout);
@@ -174,13 +174,6 @@ public class CadastroProduto extends javax.swing.JInternalFrame {
 
         panelAcoesCadProduto.setBackground(new java.awt.Color(255, 255, 255));
 
-        buttonCancelarCadastroProduto.setText("CANCELAR");
-        buttonCancelarCadastroProduto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonCancelarCadastroProdutoActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout panelAcoesCadProdutoLayout = new javax.swing.GroupLayout(panelAcoesCadProduto);
         panelAcoesCadProduto.setLayout(panelAcoesCadProdutoLayout);
         panelAcoesCadProdutoLayout.setHorizontalGroup(
@@ -188,17 +181,14 @@ public class CadastroProduto extends javax.swing.JInternalFrame {
             .addGroup(panelAcoesCadProdutoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(LabelCamposObrigatorioCliente)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(buttonCancelarCadastroProduto))
+                .addContainerGap(838, Short.MAX_VALUE))
         );
         panelAcoesCadProdutoLayout.setVerticalGroup(
             panelAcoesCadProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAcoesCadProdutoLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(panelAcoesCadProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(buttonCancelarCadastroProduto)
-                    .addComponent(LabelCamposObrigatorioCliente))
-                .addContainerGap())
+                .addComponent(LabelCamposObrigatorioCliente)
+                .addGap(38, 38, 38))
         );
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -287,6 +277,13 @@ public class CadastroProduto extends javax.swing.JInternalFrame {
             }
         });
 
+        buttonCancelarCadastroProduto.setText("CANCELAR");
+        buttonCancelarCadastroProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonCancelarCadastroProdutoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelGeralCadastroProdutoLayout = new javax.swing.GroupLayout(panelGeralCadastroProduto);
         panelGeralCadastroProduto.setLayout(panelGeralCadastroProdutoLayout);
         panelGeralCadastroProdutoLayout.setHorizontalGroup(
@@ -297,6 +294,8 @@ public class CadastroProduto extends javax.swing.JInternalFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGeralCadastroProdutoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(panelAcoesCadProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(buttonCancelarCadastroProduto)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(buttonCadastrarProduto)
                 .addContainerGap())
@@ -312,15 +311,13 @@ public class CadastroProduto extends javax.swing.JInternalFrame {
                 .addComponent(panelCaracteristicasProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panelGeralCadastroProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelGeralCadastroProdutoLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(panelAcoesCadProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(panelGeralCadastroProdutoLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(buttonCadastrarProduto)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addComponent(panelAcoesCadProduto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGeralCadastroProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(buttonCadastrarProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(buttonCancelarCadastroProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -357,11 +354,11 @@ public class CadastroProduto extends javax.swing.JInternalFrame {
                 ProdutoController.buscarProdutos(tableProdutos); // recarregar o jTable
             } 
             else {
-                JOptionPane.showMessageDialog(null, "NÃ£o foi possÃ­vel gravar o produto em questÃ£o.");
+                JOptionPane.showMessageDialog(null, "Não foi possível gravar o produto em questão.");
             }
         }
         catch(IllegalArgumentException e) {
-            JOptionPane.showMessageDialog(null, "NÃ£o Ã© possÃ­vel cadastrar, campos obrigatÃ³rios nÃ£o foram preenchidos.");
+            JOptionPane.showMessageDialog(null, "Não foi possível cadastrar, campos obrigatórios não foram preenchidos.");
         }
     }//GEN-LAST:event_buttonCadastrarProdutoActionPerformed
 
@@ -425,7 +422,7 @@ public class CadastroProduto extends javax.swing.JInternalFrame {
                 ProdutoController.buscarProdutos(tableProdutos); // recarregar o jTable
             } 
             else {
-                JOptionPane.showMessageDialog(null, "NÃ£o foi possÃ­vel alterar o produto em questÃ£o.");
+                JOptionPane.showMessageDialog(null, "Não foi possível alterar o produto em questão.");
             }
         }
     }//GEN-LAST:event_buttonSalvarAlteracaoProdutoActionPerformed
