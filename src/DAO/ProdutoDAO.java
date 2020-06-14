@@ -68,7 +68,7 @@ public class ProdutoDAO {
         
     }
 
-    // Consultar clientes
+    // Consultar Produtos
     public static ArrayList<Produto> consultar() {
         ResultSet resultSet = null;
         Connection connection = null;
@@ -117,6 +117,212 @@ public class ProdutoDAO {
         
         return clientes;
     }
+    
+    // Consultar Produto por id
+    public static ArrayList<Produto> consultar(int id) {
+        ResultSet resultSet = null;
+        Connection connection = null;
+        PreparedStatement preparedStatement = null; 
+        ArrayList<Produto> clientes = new ArrayList<Produto>();
+        
+        try {
+            connection = GerenciarDataBase.abrirConexao();
+            
+            // Criando Query SQL
+            preparedStatement = connection.prepareStatement("SELECT * FROM produto as p INNER JOIN estoque as e ON p.IdProduto = e.IdProduto WHERE p.IdProduto LIKE ?");
+            preparedStatement.setString(1, id + "%");
+            
+            resultSet = preparedStatement.executeQuery();
+            
+            while(resultSet.next()) {
+                Produto produto = new Produto();
+                
+                produto.setId(resultSet.getInt("IdProduto"));
+                produto.setMarca(resultSet.getString("Marca"));
+                produto.setModelo(resultSet.getString("Modelo"));
+                produto.setDescricao(resultSet.getString("Descricao"));
+                produto.setPreco(Double.parseDouble(resultSet.getString("Preco")));
+                produto.setIdTipo(resultSet.getInt("IdTipoProduto"));
+                produto.setQuantidade(resultSet.getInt("QuantidadeEstoque"));
+
+                // Adiciona cada cliente a lista de clientes
+                clientes.add(produto);
+                
+            }
+        } 
+        catch (SQLException | ClassNotFoundException ex) {
+            clientes = null;
+        }
+        finally {
+            try {
+                if (resultSet != null)
+                    resultSet.close();
+                if (preparedStatement != null)
+                    preparedStatement.close();
+                
+                GerenciarDataBase.fecharConexao();
+            }
+            catch (SQLException e) {
+            }
+        }
+        
+        return clientes;
+    }
+    
+    public static ArrayList<Produto> consultar(int id, ArrayList carrinho) {
+        ResultSet resultSet = null;
+        Connection connection = null;
+        PreparedStatement preparedStatement = null; 
+        ArrayList<Produto> clientes = new ArrayList<Produto>();
+        
+        try {
+            connection = GerenciarDataBase.abrirConexao();
+            
+            // Criando Query SQL
+            preparedStatement = connection.prepareStatement("SELECT * FROM produto as p INNER JOIN estoque as e ON p.IdProduto = e.IdProduto WHERE p.IdProduto LIKE ?");
+            preparedStatement.setString(1, id + "%");
+            
+            resultSet = preparedStatement.executeQuery();
+            
+            while(resultSet.next()) {
+                Produto produto = new Produto();
+                
+                produto.setId(resultSet.getInt("IdProduto"));
+                produto.setMarca(resultSet.getString("Marca"));
+                produto.setModelo(resultSet.getString("Modelo"));
+                produto.setDescricao(resultSet.getString("Descricao"));
+                produto.setPreco(Double.parseDouble(resultSet.getString("Preco")));
+                produto.setIdTipo(resultSet.getInt("IdTipoProduto"));
+                produto.setQuantidade(resultSet.getInt("QuantidadeEstoque"));
+
+                // Adiciona cada cliente a lista de clientes
+                clientes.add(produto);
+                
+            }
+        } 
+        catch (SQLException | ClassNotFoundException ex) {
+            clientes = null;
+        }
+        finally {
+            try {
+                if (resultSet != null)
+                    resultSet.close();
+                if (preparedStatement != null)
+                    preparedStatement.close();
+                
+                GerenciarDataBase.fecharConexao();
+            }
+            catch (SQLException e) {
+            }
+        }
+        
+        return clientes;
+    }
+    
+    
+    
+    // Consultar Produto por marca
+    public static ArrayList<Produto> consultar(String marca) {
+        ResultSet resultSet = null;
+        Connection connection = null;
+        PreparedStatement preparedStatement = null; 
+        ArrayList<Produto> clientes = new ArrayList<Produto>();
+        
+        try {
+            connection = GerenciarDataBase.abrirConexao();
+            
+            // Criando Query SQL
+            preparedStatement = connection.prepareStatement("SELECT * FROM produto as p INNER JOIN estoque as e ON p.IdProduto = e.IdProduto WHERE p.Marca LIKE ?");
+            preparedStatement.setString(1, "%" + marca + "%");
+            
+            resultSet = preparedStatement.executeQuery();
+            
+            while(resultSet.next()) {
+                Produto produto = new Produto();
+                
+                produto.setId(resultSet.getInt("IdProduto"));
+                produto.setMarca(resultSet.getString("Marca"));
+                produto.setModelo(resultSet.getString("Modelo"));
+                produto.setDescricao(resultSet.getString("Descricao"));
+                produto.setPreco(Double.parseDouble(resultSet.getString("Preco")));
+                produto.setIdTipo(resultSet.getInt("IdTipoProduto"));
+                produto.setQuantidade(resultSet.getInt("QuantidadeEstoque"));
+
+                // Adiciona cada cliente a lista de clientes
+                clientes.add(produto);
+                
+            }
+        } 
+        catch (SQLException | ClassNotFoundException ex) {
+            clientes = null;
+        }
+        finally {
+            try {
+                if (resultSet != null)
+                    resultSet.close();
+                if (preparedStatement != null)
+                    preparedStatement.close();
+                
+                GerenciarDataBase.fecharConexao();
+            }
+            catch (SQLException e) {
+            }
+        }
+        
+        return clientes;
+    }
+
+    // Consultar Produto por modelo
+    public static ArrayList<Produto> consultar(String marca, String modelo) {
+        ResultSet resultSet = null;
+        Connection connection = null;
+        PreparedStatement preparedStatement = null; 
+        ArrayList<Produto> clientes = new ArrayList<Produto>();
+        
+        try {
+            connection = GerenciarDataBase.abrirConexao();
+            
+            // Criando Query SQL
+            preparedStatement = connection.prepareStatement("SELECT * FROM produto as p INNER JOIN estoque as e ON p.IdProduto = e.IdProduto WHERE p.Modelo LIKE ?");
+            preparedStatement.setString(1, "%" + modelo + "%");
+            
+            resultSet = preparedStatement.executeQuery();
+            
+            while(resultSet.next()) {
+                Produto produto = new Produto();
+                
+                produto.setId(resultSet.getInt("IdProduto"));
+                produto.setMarca(resultSet.getString("Marca"));
+                produto.setModelo(resultSet.getString("Modelo"));
+                produto.setDescricao(resultSet.getString("Descricao"));
+                produto.setPreco(Double.parseDouble(resultSet.getString("Preco")));
+                produto.setIdTipo(resultSet.getInt("IdTipoProduto"));
+                produto.setQuantidade(resultSet.getInt("QuantidadeEstoque"));
+
+                // Adiciona cada cliente a lista de clientes
+                clientes.add(produto);
+                
+            }
+        } 
+        catch (SQLException | ClassNotFoundException ex) {
+            clientes = null;
+        }
+        finally {
+            try {
+                if (resultSet != null)
+                    resultSet.close();
+                if (preparedStatement != null)
+                    preparedStatement.close();
+                
+                GerenciarDataBase.fecharConexao();
+            }
+            catch (SQLException e) {
+            }
+        }
+        
+        return clientes;
+    }
+
     
     public static boolean alterar(Produto produto) {
         boolean retorno = false;
